@@ -1,0 +1,52 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = tree_main.o add_node.o binary_tree_size.o display_binary_tree.o tree_height.o dlt_tree.o leaf_nodes.o tree_diametr.o max_node.o
+LINKOBJ  = tree_main.o add_node.o binary_tree_size.o display_binary_tree.o tree_height.o dlt_tree.o leaf_nodes.o tree_diametr.o max_node.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+tree_main.o: tree_main.c
+	$(CC) -c tree_main.c -o tree_main.o $(CFLAGS)
+
+add_node.o: add_node.c
+	$(CC) -c add_node.c -o add_node.o $(CFLAGS)
+
+binary_tree_size.o: binary_tree_size.c
+	$(CC) -c binary_tree_size.c -o binary_tree_size.o $(CFLAGS)
+
+display_binary_tree.o: display_binary_tree.c
+	$(CC) -c display_binary_tree.c -o display_binary_tree.o $(CFLAGS)
+
+tree_height.o: tree_height.c
+	$(CC) -c tree_height.c -o tree_height.o $(CFLAGS)
+
+dlt_tree.o: dlt_tree.c
+	$(CC) -c dlt_tree.c -o dlt_tree.o $(CFLAGS)
+
+leaf_nodes.o: leaf_nodes.c
+	$(CC) -c leaf_nodes.c -o leaf_nodes.o $(CFLAGS)
+
+tree_diametr.o: tree_diametr.c
+	$(CC) -c tree_diametr.c -o tree_diametr.o $(CFLAGS)
+
+max_node.o: max_node.c
+	$(CC) -c max_node.c -o max_node.o $(CFLAGS)
